@@ -1,28 +1,30 @@
 const Options = ["rock", "paper", "scissors"];
 
-const playerChoice = "rock"
-let computerChoice = computerPlay()
+
 
 
 function computerPlay() {
-    return Options[~~(Math.random() * Options.length)];
+  return Options[~~(Math.random() * Options.length)];
 }
 
-function playRound (playerChoice, computerChoice) {
-    if (playerChoice === "rock" && computerChoice === "paper")
-    return "you lose"
-    else if (playerChoice === "rock" && computerChoice === "rock")
-    return "you tied"
-    else if (playerChoice === "rock" && computerChoice === "scissors")
-    return "you win"
+function playRound(playerChoice, computerChoice) {
+  if (playerChoice === "rock" && computerChoice === "paper") return "you lose";
+  else if (playerChoice === "rock" && computerChoice === "rock")
+    return "you tied";
+  else if (playerChoice === "rock" && computerChoice === "scissors")
+    return "you win";
 }
 
-function game() {
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button) => {
+    button.addEventListener ("click", () => {
+        playerChoice = button.className;
+        let computerChoice = computerPlay();
+        
+
+
+
+    })
 }
 
-console.log(game())
+rockbtn.addEventListener("click", () => {});
