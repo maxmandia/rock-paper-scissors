@@ -1,8 +1,5 @@
 const Options = ["rock", "paper", "scissors"];
 
-
-
-
 function computerPlay() {
   return Options[~~(Math.random() * Options.length)];
 }
@@ -16,15 +13,12 @@ function playRound(playerChoice, computerChoice) {
 }
 
 const buttons = document.querySelectorAll("button");
-buttons.forEach(button) => {
-    button.addEventListener ("click", () => {
-        playerChoice = button.className;
-        let computerChoice = computerPlay();
-        
+buttons.forEach(function (btn) {
+  btn.addEventListener("click", () => {
+    playerChoice = btn.className;
+    let computerChoice = computerPlay();
 
-
-
-    })
-}
-
-rockbtn.addEventListener("click", () => {});
+    console.log(playerChoice);
+    console.log(computerChoice);
+  });
+});
