@@ -1,16 +1,5 @@
 const Options = ["rock", "paper", "scissors"];
 
-btns = document.querySelectorAll(".btn");
-
-btns.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    let computerChoice = computerPlay();
-    let playerChoice = btn.textContent;
-
-    console.log(playRound(computerChoice, playerChoice));
-  });
-});
-
 function computerPlay() {
   return Options[~~(Math.random() * Options.length)];
 }
@@ -22,3 +11,14 @@ function playRound(playerChoice, computerChoice) {
   else if (playerChoice === "rock" && computerChoice === "scissors")
     return "you win";
 }
+
+btns = document.querySelectorAll(".btn");
+
+btns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    let computerChoice = computerPlay();
+    let playerChoice = btn.textContent;
+
+    console.log(playRound(computerChoice, playerChoice));
+  });
+});
