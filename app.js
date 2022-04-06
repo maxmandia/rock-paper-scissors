@@ -1,28 +1,28 @@
 const Options = ["rock", "paper", "scissors"];
 
-const playerChoice = "rock"
-let computerChoice = computerPlay()
+// Query the DOM
+btns = document.querySelectorAll(".btn");
 
+let playerChoice = "rock";
+
+function playerPlay() {
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      let pushingP = btn.textContent;
+    });
+  });
+}
 
 function computerPlay() {
-    return Options[~~(Math.random() * Options.length)];
+  return Options[~~(Math.random() * Options.length)];
 }
 
-function playRound (playerChoice, computerChoice) {
-    if (playerChoice === "rock" && computerChoice === "paper")
-    return "you lose"
-    else if (playerChoice === "rock" && computerChoice === "rock")
-    return "you tied"
-    else if (playerChoice === "rock" && computerChoice === "scissors")
-    return "you win"
-}
+const computerChoice = computerPlay();
 
-function game() {
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
-    console.log(playRound(playerChoice, computerChoice))
+function playRound(playerChoice, computerChoice) {
+  if (playerChoice === "rock" && computerChoice === "paper") return "you lose";
+  else if (playerChoice === "rock" && computerChoice === "rock")
+    return "you tied";
+  else if (playerChoice === "rock" && computerChoice === "scissors")
+    return "you win";
 }
-
-console.log(game())

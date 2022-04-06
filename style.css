@@ -1,0 +1,7 @@
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  margin: 100px;
+}
