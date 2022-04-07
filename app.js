@@ -25,12 +25,36 @@ function playRound(playerChoice, computerChoice) {
 }
 
 const buttons = document.querySelectorAll("button");
+const results = document.querySelector(".results");
+const playerScore = document.querySelector(".player-score");
+const computerScore = document.querySelector(".computer-score");
+const gameResults = document.querySelector(".game-results");
 
 buttons.forEach(function (btn) {
-  btn.addEventListener("click", () => {
-    playerChoice = btn.className;
+  btn.addEventListener("click", (e) => {
+    playerChoice = btn.textContent;
     let computerChoice = computerPlay();
 
-    console.log(playRound(playerChoice, computerChoice));
+    let outcome = playRound(playerChoice, computerChoice);
+
+    if (outcome === "you win") {
+      myScore++;
+    } else if (outcome === "you lose") {
+      pcScore++;
+    } else if (outcome === "you tied") {
+    }
+
+    if (myScore === 5) {
+      gameResults.innerHTML = `<p> You win!</p>`;
+    } else if (pcScore === 5) {
+      gameResults.innerHTML = `<p> You lose!</p>`;
+    }
+
+    results.innerHTML = `<p>${outcome}</p>`;
+    playerScore.innerHTML = `<p> player score:${myScore}</p>`;
+    computerScore.innerHTML = `<p>computer score: ${pcScore}</p>`;
   });
 });
+
+myScore = 0;
+pcScore = 0;
